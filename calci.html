@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calci.css">
+</head>
+<body >
+    <div class="outer">
+            <input type="text" name="" id="res" class="answer">
+        
+        <div class="inner">
+            <input type="button" value="AC" class="keys" onclick="Clear()">
+            <input type="button" value="&#129056" class="keys" onclick="Back()">
+            <input type="button" value="%" class="keys" onclick="Solve('%')">
+            <input type="button" value="/" class="keys" onclick="Solve('/')"><br><br>
+            <input type="button" value="7" class="keys" onclick="Solve('7')">
+            <input type="button" value="8" class="keys" onclick="Solve('8')">
+            <input type="button" value="9" class="keys" onclick="Solve('9')">
+            <input type="button" value="X" class="keys" onclick="Solve('*')"><br><br>
+            <input type="button" value="4" class="keys" onclick="Solve('4')">
+            <input type="button" value="5" class="keys" onclick="Solve('5')">
+            <input type="button" value="6" class="keys" onclick="Solve('6')">
+            <input type="button" value="-" class="keys" onclick="Solve('-')"><br><br>
+            <input type="button" value="1" class="keys" onclick="Solve('1')">
+            <input type="button" value="2" class="keys" onclick="Solve('2')">
+            <input type="button" value="3" class="keys" onclick="Solve('3')">
+            <input type="button" value="+" class="keys" onclick="Solve('+')"><br><br>
+            <input type="button" value="00" class="keys" onclick="Solve('00')">
+            <input type="button" value="0" class="keys" onclick="Solve('0')">
+            <input type="button" value="." class="keys" onclick="Solve('.')">
+            <input type="button" value="=" class="keys" onclick="Result()">
+        </div>
+    </div>
+
+
+    <script>
+        function Solve(val){
+            let v = document.getElementById('res').value += val
+        }
+        function Result(){
+            let exp1 = document.getElementById('res').value
+            let num = eval(exp1)
+            document.getElementById('res').value = num
+        }
+        function Back(){
+            let ev = document.getElementById('res').value
+            ev1 = ev.slice(0,-1)
+            document.getElementById('res').value = ev1
+        }
+        function Clear(){
+            document.getElementById('res').value = ''
+        }
+    </script>
+</body>
+</html>
